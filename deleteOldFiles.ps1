@@ -8,7 +8,7 @@ function cleanUp($path) {
 
 }
 
-function deleteFiles($path, $days, $hours, $minutes) {
+function deleteFiles($path, $days, $hours, $minutes, $exclude) {
     if ($path -notmatch '\\$') {
         $dir += '\'
     }
@@ -17,12 +17,11 @@ function deleteFiles($path, $days, $hours, $minutes) {
 
     foreach ($i in $files) {
         if (((get-date) - $i.LastWriteTime) -gt $timespan) {
-            Remove-Item $i.FullName -Recurse -Force -ErrorAction SilentlyContinue
+            
+            if ($i -notmatch $exclude) {    
+                Remove-Item $i.FullName -Recurse -Force -ErrorAction SilentlyContinue
+            }
         }
-        
     }
     cleanUp($path)
-
 }
-
-
