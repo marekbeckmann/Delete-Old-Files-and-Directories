@@ -8,6 +8,7 @@
 
 ```
 wget https://github.com/marekbeckmann/Delete-Old-Files-and-Directories/archive/refs/heads/main.zip -OutFile "removeOldContent.zip"
+Expand-Archive .\removeOldContent.zip -DestinationPath .\removeOldContent
 ``` 
 ### 2. Run the Script
 
