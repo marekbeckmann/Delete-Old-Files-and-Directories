@@ -7,7 +7,7 @@
 ### 1. Download the Script
 
 ```
-wget https://github.com/marekbeckmann/Automated-Linux-Security/archive/refs/heads/main.zip -OutFile "removeOldContent.zip"
+wget https://github.com/marekbeckmann/Delete-Old-Files-and-Directories/archive/refs/heads/main.zip -OutFile "removeOldContent.zip"
 ``` 
 ### 2. Run the Script
 
