@@ -12,7 +12,7 @@ function deleteFiles($path, $days, $hours, $minutes, $exclude) {
     if ($path -notmatch '\\$') {
         $dir += '\'
     }
-    $files = @(Get-ChildItem -Path $path -Recurse -ErrorAction SilentlyContinue)
+    $files = @(Get-ChildItem -Path $path -ErrorAction SilentlyContinue)
     $timespan = new-timespan -days $days -hours $hours -minutes $minutes
 
     foreach ($i in $files) {
